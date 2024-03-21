@@ -1,16 +1,13 @@
 import React from 'react';
 import { Text, StyleSheet, SafeAreaView } from 'react-native';
 import { theme } from '../../theme';
-import Button from '../../components/Button';
+import ButtonCreateEvent from '../../components/Button/ButtonCreateEvent';
 
 const DetailsScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.h1}>Details Screen</Text>
-
-      <Button style={{ position: 'absolute', bottom: 16, right: 16 }}>
-        Criar evento
-      </Button>
+      <ButtonCreateEvent />
     </SafeAreaView>
   );
 };

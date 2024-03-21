@@ -5,23 +5,13 @@ import { ParamListBase, useNavigation } from '@react-navigation/native';
 import { theme } from '../../theme';
 import { StackNavigationProp } from '@react-navigation/stack';
 import Button from '../../components/Button';
+import CreateEvent from '../../components/Button/ButtonCreateEvent';
 
 const RadioScreen = () => {
   const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
 
   const handleDetailsScreen = () => {
     navigation.navigate('DetailsScreen');
-  };
-
-  const handleOpenLink = async () => {
-    const url = 'https://www.paulojanai.com'; // Substitua pelo URL que deseja abrir
-    const supported = await Linking.canOpenURL(url);
-
-    if (supported) {
-      await Linking.openURL(url);
-    } else {
-      console.error('Não é possível abrir o link:', url);
-    }
   };
 
   return (
@@ -35,12 +25,7 @@ const RadioScreen = () => {
         Go to Details
       </Button>
 
-      <Button
-        nameIconLeft="calendar"
-        style={{ position: 'absolute', bottom: 16, right: 16 }}
-        onPress={handleOpenLink}>
-        Criar evento
-      </Button>
+      <CreateEvent />
     </SafeAreaView>
   );
 };
