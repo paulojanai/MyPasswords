@@ -27,11 +27,16 @@ const RadioScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.h1}>Próximos Screen</Text>
-      <Button variant="secondary" size="small" onPress={handleDetailsScreen}>
+      <Button
+        variant="secondary"
+        nameIconRight="chevron-right"
+        size="small"
+        onPress={handleDetailsScreen}>
         Go to Details
       </Button>
 
       <Button
+        nameIconLeft="calendar"
         style={{ position: 'absolute', bottom: 16, right: 16 }}
         onPress={handleOpenLink}>
         Criar evento
@@ -43,6 +48,8 @@ const RadioScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    position: 'relative',
+    paddingHorizontal: 24,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: theme.colors.neutral[150],

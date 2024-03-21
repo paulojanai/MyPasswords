@@ -16,7 +16,11 @@ const ProfileScreen = () => {
     <SafeAreaView style={styles.container}>
       <Text style={styles.h1}>Settings Screen</Text>
 
-      <Button variant="secondary" size="small" onPress={handleProfileScreen}>
+      <Button
+        variant="secondary"
+        size="small"
+        nameIconRight="chevron-right"
+        onPress={handleProfileScreen}>
         Go to Profile
       </Button>
     </SafeAreaView>

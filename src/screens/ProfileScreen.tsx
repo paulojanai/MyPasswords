@@ -12,7 +12,11 @@ const ProfileScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.h1}>Profile Screen</Text>
-      <Button variant="secondary" size="small" onPress={navigation.goBack}>
+      <Button
+        variant="secondary"
+        size="small"
+        nameIconLeft="chevron-left"
+        onPress={navigation.goBack}>
         Go Back
       </Button>
     </SafeAreaView>
