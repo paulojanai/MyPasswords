@@ -1,12 +1,13 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, Text } from 'react-native';
+import { Text, StyleSheet, SafeAreaView } from 'react-native';
+import { theme } from '../../theme';
+import ButtonCreateEvent from '../../components/Button/ButtonCreateEvent';
 
-import { theme } from '../theme';
-
-const FeedScreen = () => {
+const AllEventsScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.h1}>Feed Screen</Text>
+      <Text style={styles.h1}>AllEvents Screen</Text>
+      <ButtonCreateEvent />
     </SafeAreaView>
   );
 };
@@ -23,8 +24,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: theme.colors.neutral[900],
     fontWeight: 'bold',
-    marginBottom: 24,
   },
 });
 
-export default FeedScreen;
+export default AllEventsScreen;

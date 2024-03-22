@@ -14,7 +14,7 @@ const RadioScreen = () => {
   };
 
   const handleAllEventsScreen = () => {
-    navigation.navigate('AllEventsScreen');
+    navigation.navigate('EventsTopTab');
   };
 
   return (
