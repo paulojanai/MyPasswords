@@ -29,7 +29,7 @@ const ButtonIcon = ({ nameIcon, size, variant }: IButtonIcon) => {
   return (
     <Icon
       name={nameIcon}
-      size={size === 'small' ? 20 : 24}
+      size={size === 'small' ? 18 : 22}
       color={
         variant === 'primary'
           ? theme.colors.primary[50]
@@ -77,9 +77,9 @@ const styles = (variant?: string, size?: string) =>
       justifyContent: 'center',
       alignItems: 'center',
       gap: 12,
-      paddingHorizontal: 20,
-      paddingVertical: size === 'small' ? 14 : 20,
-      borderRadius: 12,
+      paddingHorizontal: 24,
+      paddingVertical: size === 'small' ? 12 : 18,
+      borderRadius: 999,
       borderWidth: 2,
       borderColor:
         variant === 'primary'

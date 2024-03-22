@@ -1,17 +1,20 @@
 import React from 'react';
-import { Text, StyleSheet, SafeAreaView, Linking } from 'react-native';
+import { Text, StyleSheet, SafeAreaView } from 'react-native';
 import { ParamListBase, useNavigation } from '@react-navigation/native';
 
 import { theme } from '../../theme';
 import { StackNavigationProp } from '@react-navigation/stack';
 import Button from '../../components/Button';
-import CreateEvent from '../../components/Button/ButtonCreateEvent';
 
 const RadioScreen = () => {
   const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
 
   const handleDetailsScreen = () => {
     navigation.navigate('DetailsScreen');
+  };
+
+  const handleAllEventsScreen = () => {
+    navigation.navigate('AllEventsScreen');
   };
 
   return (
@@ -25,7 +28,13 @@ const RadioScreen = () => {
         Go to Details
       </Button>
 
-      <CreateEvent />
+      <Button
+        variant="secondary"
+        nameIconRight="chevron-right"
+        size="small"
+        onPress={handleAllEventsScreen}>
+        Go to All Events
+      </Button>
     </SafeAreaView>
   );
 };
@@ -33,10 +42,11 @@ const RadioScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    position: 'relative',
     paddingHorizontal: 24,
+    display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    gap: 24,
     backgroundColor: theme.colors.neutral[150],
   },
 
@@ -44,7 +54,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: theme.colors.neutral[900],
     fontWeight: 'bold',
-    marginBottom: 24,
   },
 });
 
