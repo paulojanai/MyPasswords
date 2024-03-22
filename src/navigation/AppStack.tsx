@@ -21,6 +21,7 @@ import {
 } from '../screens/Printer';
 
 import { theme } from '../theme';
+import Header from '../components/ui/Header';
 
 const BottomTab = createBottomTabNavigator();
 const TopTab = createMaterialTopTabNavigator();
@@ -117,7 +118,7 @@ const BottomTabNavigator = () => {
   return (
     <BottomTab.Navigator
       screenOptions={({ route, navigation }) => ({
-        headerShown: false,
+        header: () => <Header />,
         tabBarHideOnKeyboard: true,
         tabBarActiveTintColor: theme.colors.primary[500],
         tabBarInactiveTintColor: theme.colors.neutral[500],
@@ -173,42 +174,27 @@ const BottomTabNavigator = () => {
       <BottomTab.Screen
         name="feed"
         component={FeedScreen}
-        options={{
-          tabBarLabel: 'Feed',
-        }}
+        options={{ tabBarLabel: 'Feed' }}
       />
       <BottomTab.Screen
         name="layers"
         component={LayersScreen}
-        options={{
-          tabBarLabel: 'Layers',
-        }}
+        options={{ tabBarLabel: 'Layers' }}
       />
       <BottomTab.Screen
         name="message"
         component={MessageScreen}
-        options={{
-          tabBarLabel: 'Message',
-        }}
+        options={{ tabBarLabel: 'Message' }}
       />
       <BottomTab.Screen
         name="printer"
         component={PrinterTopTab}
-        options={{
-          headerShown: true,
-          tabBarLabel: 'Printer',
-          title: 'All printers',
-          headerStyle: {
-            backgroundColor: theme.colors.neutral[100],
-          },
-        }}
+        options={{ tabBarLabel: 'Printer' }}
       />
       <BottomTab.Screen
         name="profileStack"
         component={SettingsScreen}
-        options={{
-          tabBarLabel: 'Settings',
-        }}
+        options={{ tabBarLabel: 'Settings' }}
       />
     </BottomTab.Navigator>
   );
